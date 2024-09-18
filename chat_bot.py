@@ -3,9 +3,17 @@ from langchain_openai import ChatOpenAI
 import streamlit as st
 import json
 from st_social_media_links import SocialMediaIcons
+import os
+from dotenv import load_dotenv
+
+# Cargar las variables de entorno
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("No API key found. Please set the OPENAI_API_KEY environment variable.")
 
 # Inicializar el modelo
-llm = ChatOpenAI(model="gpt-4o", temperature=0, api_key="OPENAI_API_KEY")
+llm = ChatOpenAI(model="gpt-4o", temperature=0, api_key=api_key)
 
 # Incluir logo a la izquierda y título a la derecha
 st.markdown("""
