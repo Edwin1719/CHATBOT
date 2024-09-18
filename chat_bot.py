@@ -5,7 +5,7 @@ import json
 from st_social_media_links import SocialMediaIcons
 
 # Inicializar el modelo
-llm = ChatOpenAI(model="gpt-4o", temperature=0, api_key="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")
+llm = ChatOpenAI(model="gpt-4o", temperature=0, api_key="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")
 
 # Incluir logo a la izquierda y título a la derecha
 st.markdown("""
